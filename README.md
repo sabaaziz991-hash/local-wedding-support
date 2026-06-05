@@ -1,4 +1,4 @@
-# Local Wedding Public Pages
+# Wendus Public Pages
 
 These static pages are prepared for the App Store Connect Privacy Policy URL and Support URL fields.
 
