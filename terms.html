@@ -3,40 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wendus Terms</title>
+  <title>Wendus Terms of Use</title>
+  <meta name="description" content="Terms of use for Wendus, the local-first wedding planning app for iPhone and iPad.">
   <style>
     :root {
-      color-scheme: light;
+      color-scheme: light dark;
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --line: #e5e5ea;
+      --accent: #4c6b54;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #1d1d1f;
-      background: #f5f5f7;
     }
-    body {
-      margin: 0;
-      padding: 32px 20px;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161916;
+        --card: #1f231f;
+        --ink: #e8eae3;
+        --muted: #9aa192;
+        --line: #2e332b;
+        --accent: #8cae92;
+      }
     }
+    body { margin: 0; padding: 32px 20px; background: var(--bg); color: var(--ink); }
     main {
-      max-width: 760px;
-      margin: 0 auto;
-      background: #fff;
-      border: 1px solid #e5e5ea;
-      border-radius: 8px;
-      padding: 32px;
+      max-width: 760px; margin: 0 auto; background: var(--card);
+      border: 1px solid var(--line); border-radius: 10px; padding: 32px;
     }
-    h1 {
-      line-height: 1.15;
-      margin-top: 0;
-    }
-    p {
-      line-height: 1.55;
-    }
+    h1 { margin-top: 0; line-height: 1.15; }
+    p, li { line-height: 1.55; }
+    a { color: var(--accent); }
+    nav { margin-bottom: 20px; font-size: 0.95rem; }
+    nav a { margin-right: 14px; }
   </style>
 </head>
 <body>
   <main>
-    <h1>Wendus Terms</h1>
-    <p>Wendus should use Apple's standard End User License Agreement in App Store Connect unless a custom EULA is required.</p>
-    <p>If a custom EULA is required, add the final legal terms to this page and enter its public HTTPS URL in App Store Connect.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <h1>Wendus Terms of Use</h1>
+    <p>Wendus is distributed through the Apple App Store and is governed by Apple's standard <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed Application End User License Agreement (EULA)</a>.</p>
+    <p>One Wedding Pass is a one-time in-app purchase handled by Apple's App Store purchase system. The 3-day premium trial is local to the device, requires no payment method, and never converts into a charge automatically.</p>
+    <p>For privacy details, see the <a href="privacy.html">Wendus Privacy Policy</a>.</p>
   </main>
 </body>
 </html>

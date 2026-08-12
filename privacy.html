@@ -4,52 +4,55 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wendus Privacy Policy</title>
+  <meta name="description" content="Privacy policy for Wendus, the local-first wedding planning app for iPhone and iPad.">
   <style>
     :root {
-      color-scheme: light;
+      color-scheme: light dark;
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --line: #e5e5ea;
+      --accent: #4c6b54;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #1d1d1f;
-      background: #f5f5f7;
     }
-    body {
-      margin: 0;
-      padding: 32px 20px;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161916;
+        --card: #1f231f;
+        --ink: #e8eae3;
+        --muted: #9aa192;
+        --line: #2e332b;
+        --accent: #8cae92;
+      }
     }
+    body { margin: 0; padding: 32px 20px; background: var(--bg); color: var(--ink); }
     main {
-      max-width: 760px;
-      margin: 0 auto;
-      background: #fff;
-      border: 1px solid #e5e5ea;
-      border-radius: 8px;
-      padding: 32px;
+      max-width: 760px; margin: 0 auto; background: var(--card);
+      border: 1px solid var(--line); border-radius: 10px; padding: 32px;
     }
-    h1, h2 {
-      line-height: 1.15;
-    }
-    h1 {
-      margin-top: 0;
-    }
-    p, li {
-      line-height: 1.55;
-    }
-    a {
-      color: #06c;
-    }
-    .updated {
-      color: #6e6e73;
-      font-size: 0.95rem;
-    }
+    h1 { margin-top: 0; line-height: 1.15; }
+    h2 { line-height: 1.2; margin-top: 1.8em; }
+    p, li { line-height: 1.55; }
+    a { color: var(--accent); }
+    .updated { color: var(--muted); font-size: 0.95rem; }
+    nav { margin-bottom: 20px; font-size: 0.95rem; }
+    nav a { margin-right: 14px; }
   </style>
 </head>
 <body>
   <main>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="terms.html">Terms</a>
+    </nav>
     <h1>Wendus Privacy Policy</h1>
-    <p class="updated">Last updated: June 5, 2026</p>
-
+    <p class="updated">Last updated: August 12, 2026</p>
     <p>Wendus is designed as a local-first wedding planning app. Wedding event data is stored on the user's device by default.</p>
 
     <h2>Data the App Handles</h2>
-    <p>The app can store event details, wedding period names, schedule event names, guest and household names, RSVP status, meal choices, dietary notes, accessibility notes, contact details entered by the user, seating assignments, QR pass records, check-in records, local purchase pass records, export previews, local CSV import/export history, and audit history.</p>
+    <p>The app can store event details, wedding period names, schedule event names, guest and household names, RSVP status, meal choices, dietary notes, accessibility notes, contact details entered by the user, seating assignments and saved seating drafts, imported venue map or floor-plan files selected by the user, venue sketch zones, scale calibration, table and item placement marks, QR pass records, check-in records, venue handoff staff packets, trusted venue peer records, local purchase pass records, export previews, local CSV import/export history, and audit history.</p>
 
     <h2>Data Collection</h2>
     <p>The app does not transmit event data or local purchase pass records to a developer-operated server. It does not use advertising SDKs, analytics SDKs, tracking domains, guest accounts, vendor accounts, or live cloud sync. Paid upgrades use Apple's App Store purchase system; payment card details are handled by Apple and are not stored in the app.</p>
@@ -57,17 +60,26 @@
     <h2>Camera</h2>
     <p>The camera is used only when the user opens Venue mode's QR scanner. QR payloads are opaque tokens used for local event check-in.</p>
 
+    <h2>Local Network</h2>
+    <p>Venue Handoff can use local peer-to-peer connectivity to send an encrypted, check-in-only venue packet between nearby Wendus devices with an active 3-day premium trial or One Wedding Pass. The receiver can search guests, scan or paste QR tokens, mark arrivals, and view table, meal, dietary, and accessibility notes. The receiver can return only check-in results. Wendus does not send these packets through a developer-operated server.</p>
+
     <h2>Local Storage and Encryption</h2>
-    <p>The app stores the event snapshot locally in SQLite and encrypts the stored snapshot with Apple platform cryptography. Local CSV export files and encrypted archive files use iOS file protection.</p>
+    <p>The app stores the event snapshot locally in SQLite and encrypts the stored snapshot with Apple platform cryptography. Imported venue map files are stored as protected local sidecar files and referenced from the encrypted event snapshot by metadata. Local CSV export files and encrypted archive files use iOS file protection.</p>
+
+    <h2>Backup and Transfer</h2>
+    <p>The optional Backup &amp; Transfer feature creates a single backup file containing the event, encrypted with a passphrase the user chooses (PBKDF2 key derivation and AES-GCM encryption using Apple's built-in cryptography). The file is created locally and leaves the device only when the user shares or saves it. Wendus cannot read the backup without the passphrase and cannot recover a lost passphrase.</p>
 
     <h2>Sharing and Exports</h2>
-    <p>The user can create local CSV records for vendors and a master guest list CSV for spreadsheet editing. Export previews show the purpose, included fields, excluded fields, row count, and sensitive-field warning before a vendor record is created. If the user imports a CSV from Files, the app reads that selected file locally to add or update guests, households, RSVP state, meal choices, table assignments, and check-in fields.</p>
+    <p>The user can create local CSV records for vendors and a master guest list CSV for spreadsheet editing. Export previews show the purpose, included fields, excluded fields, row count, and sensitive-field warning before a vendor record is created. If the user imports a CSV from Files, the app reads that selected file locally to add or update guests, households, RSVP state, meal choices, table assignments, and check-in fields. If the user imports a venue map or floor-plan PDF/image from Files, the app reads that selected file locally to create a rough, optionally scale-calibrated sketch guide with measured table and item placement. Venue Handoff transfers are intentionally started by the user and are limited to check-in-only operational data; imported venue maps and sketch files are not included in Venue Handoff packets or vendor CSV exports.</p>
 
     <h2>Retention</h2>
-    <p>The app provides post-event closeout actions to archive the event, purge sensitive fields, keep aggregate counts, or delete local event data. Purge and aggregate-only closeout remove generated local CSV export files; delete closeout removes generated local CSV export files and local encrypted archive files.</p>
+    <p>The app provides post-event closeout actions to archive the event, purge sensitive fields, keep aggregate counts, or delete local event data. Purge and aggregate-only closeout remove generated local CSV export files and imported venue map sidecar files; delete closeout removes generated local CSV export files, imported venue map sidecar files, local encrypted archive files, and local backup files.</p>
+
+    <h2>Website Analytics</h2>
+    <p>This support and privacy site is a static page and uses no analytics, cookies, or trackers. The separate marketing website at <a href="https://wendus.app">wendus.app</a> uses Google Analytics 4 (measurement ID G-LKL2T81FPT) for aggregate website traffic measurement; that measurement never involves data from inside the app.</p>
 
     <h2>Contact</h2>
-    <p>For help with Wendus, use the Support URL published for the app on its App Store product page.</p>
+    <p>For help with Wendus, use the <a href="support.html">support page</a> or the public support form at <a href="https://github.com/sabaaziz991-hash/local-wedding-support/issues">github.com/sabaaziz991-hash/local-wedding-support/issues</a>.</p>
   </main>
 </body>
 </html>

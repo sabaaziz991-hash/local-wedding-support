@@ -4,63 +4,76 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wendus Support</title>
+  <meta name="description" content="Support page for Wendus, the local-first wedding planning app for iPhone and iPad.">
   <style>
     :root {
-      color-scheme: light;
+      color-scheme: light dark;
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --line: #e5e5ea;
+      --accent: #4c6b54;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #1d1d1f;
-      background: #f5f5f7;
     }
-    body {
-      margin: 0;
-      padding: 32px 20px;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161916;
+        --card: #1f231f;
+        --ink: #e8eae3;
+        --muted: #9aa192;
+        --line: #2e332b;
+        --accent: #8cae92;
+      }
     }
+    body { margin: 0; padding: 32px 20px; background: var(--bg); color: var(--ink); }
     main {
-      max-width: 760px;
-      margin: 0 auto;
-      background: #fff;
-      border: 1px solid #e5e5ea;
-      border-radius: 8px;
-      padding: 32px;
+      max-width: 760px; margin: 0 auto; background: var(--card);
+      border: 1px solid var(--line); border-radius: 10px; padding: 32px;
     }
-    h1, h2 {
-      line-height: 1.15;
-    }
-    h1 {
-      margin-top: 0;
-    }
-    p, li {
-      line-height: 1.55;
-    }
-    a {
-      color: #06c;
-    }
-    .contact {
-      border: 1px solid #d2d2d7;
-      background: #f5f5f7;
-      border-radius: 6px;
-      padding: 12px 14px;
+    h1 { margin-top: 0; line-height: 1.15; }
+    h2 { line-height: 1.2; margin-top: 1.8em; }
+    p, li { line-height: 1.55; }
+    a { color: var(--accent); }
+    nav { margin-bottom: 20px; font-size: 0.95rem; }
+    nav a { margin-right: 14px; }
+    .cta {
+      display: inline-block; padding: 10px 18px; border-radius: 999px;
+      background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
     }
   </style>
 </head>
 <body>
   <main>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
     <h1>Wendus Support</h1>
-    <p class="contact">For support, use the public support form at <a href="https://github.com/sabaaziz991-hash/local-wedding-support/issues">github.com/sabaaziz991-hash/local-wedding-support/issues</a>.</p>
+    <p>Questions, bug reports, and feature requests are handled through the public support form:</p>
+    <p><a class="cta" href="https://github.com/sabaaziz991-hash/local-wedding-support/issues">Open the support form</a></p>
 
     <h2>App Summary</h2>
-    <p>Wendus is a local-first iOS app for private wedding operations. It manages named wedding periods, editable schedule events, guests, households, RSVP state, seating, QR check-in, privacy-preserving vendor export previews, Excel-compatible guest list CSV import/export, encrypted archives, and post-event retention choices.</p>
+    <p>Wendus is a local-first iOS app for private wedding operations. It manages named wedding periods, editable schedule events, guests, households, RSVP state, seating with saved drafts, local venue map sketching with optional scale calibration, QR check-in, encrypted venue handoff to door staff, privacy-preserving vendor export previews, Excel-compatible guest list CSV import/export, passphrase-protected backups, encrypted archives, and post-event retention choices.</p>
 
     <h2>No Account Required</h2>
-    <p>The app does not require a login or guest account. Apple Review can open the app and test the core workflows immediately.</p>
+    <p>The app does not require a login or guest account. All planning works offline.</p>
 
     <h2>Common Support Topics</h2>
     <ul>
-      <li>Local event data is stored on the device by default.</li>
-      <li>The master guest list can be exported as a CSV for spreadsheet editing and imported from a user-selected CSV file.</li>
-      <li>Venue mode works without a network service after seating and QR passes are prepared.</li>
+      <li>Local event data is stored on the device by default and encrypted at rest.</li>
+      <li>The master guest list can be exported as a CSV for spreadsheet editing and imported back; import shows a column-mapping preview, and unmapped fields keep their current values.</li>
+      <li>Manual guest entry and CSV import support optional phone, email, WhatsApp, Instagram, and SMS contact fields.</li>
+      <li>Free Core supports one main event with up to 50 guests.</li>
+      <li>The local 3-day premium trial requires no payment and never charges automatically.</li>
+      <li>One Wedding Pass is a one-time purchase that unlocks one locked wedding period of up to four weeks with unlimited guests.</li>
+      <li>Premium venue planning can import a venue-provided PDF or image, calibrate map scale, place measured tables and zones, and apply restricted areas to seating.</li>
+      <li>Venue mode works without a network connection after seating and QR passes are prepared.</li>
       <li>Camera permission is requested only when opening the QR scanner.</li>
-      <li>Post-event closeout can purge sensitive fields, keep aggregates, archive the event, or delete local event data.</li>
+      <li>Venue Handoff sends encrypted, check-in-only packets between nearby Wendus devices with premium access.</li>
+      <li>Moving to a new phone: create a passphrase backup in Privacy → Backup &amp; Transfer, save the file outside the app, and restore it on the new device. The passphrase cannot be recovered if lost.</li>
+      <li>Post-event closeout can purge sensitive fields, keep aggregates, archive the event, or delete local event data (deleting also removes exports, archives, and backup files stored inside the app).</li>
     </ul>
   </main>
 </body>
